@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cleaning_Service
 {
-    internal class JobType
+    internal class Domestic
     {
-
-
-
     }
 }

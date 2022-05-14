@@ -8,9 +8,9 @@ namespace Cleaning_Service
 {
     /* Used for the type of property that the service offers */
 
-    public class Enums
+    public class EnumProperties
     {
-        public enum ResidentType
+        public enum Domestic
         {
             DEATCHED,
             SEMIDEATCHED,
@@ -20,7 +20,7 @@ namespace Cleaning_Service
             APARTMENT
         }
 
-        public enum CommercialType
+        public enum Commercial
         {
             OFFICE,
             WAREHOUSE,

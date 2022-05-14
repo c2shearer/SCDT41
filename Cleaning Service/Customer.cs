@@ -22,7 +22,7 @@ namespace Cleaning_Service
             this.LastName = LastName;
             IsAdmin = false;
             this.Gender = Gender;
-            this.Email = Email;
+            this.Email = Email.Contains('@') ? Email : "Email not valid";
             this.Telephone = Telephone;
             this.Address = Address;
             this.City = City;
@@ -31,7 +31,7 @@ namespace Cleaning_Service
 
         public override string ToString()
         {
-            return $"Customer Information: {FirstName} {LastName}\n{Gender}\nContact: {Email} + {Telephone}\n{Address}, {City}, {County}";
+            return $"Customer: {FirstName} {LastName} {Gender}\nContact: {Email} + {Telephone}\n{Address}, {City}, {County}";
         }
     }
 }
