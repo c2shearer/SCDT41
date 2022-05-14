@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cleaning_Service
 {
-    internal class Customer : User
+    public class Customer : User
     {
         public char Gender { get; set; }
         public string? Email { get; set; }

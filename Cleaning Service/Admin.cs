@@ -19,6 +19,5 @@ namespace Cleaning_Service
             this.Username = Username;
             this.Password = Password;
         }
-
     }
 }

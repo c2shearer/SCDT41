@@ -10,7 +10,7 @@ namespace Cleaning_Service
 
     public class EnumProperties
     {
-        public enum Domestic
+        public enum DomesticType
         {
             DEATCHED,
             SEMIDEATCHED,
@@ -20,7 +20,7 @@ namespace Cleaning_Service
             APARTMENT
         }
 
-        public enum Commercial
+        public enum CommercialType
         {
             OFFICE,
             WAREHOUSE,
