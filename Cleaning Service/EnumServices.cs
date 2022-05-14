@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cleaning_Service
 {
+    /* Used for the type of cleaning that the service offers */
+
     public class EnumServices
     {
         public enum CleaningService
@@ -22,6 +24,23 @@ namespace Cleaning_Service
             FIREDAMAGE,
             SMOKEDAMAGE,
             WATERDAMAGE
+        }
+
+        public static void Types()
+        {
+            Console.WriteLine("Cleaning Services");
+
+            foreach (var type in Enum.GetValues(typeof(CleaningService)))
+            {
+                Console.WriteLine(type);
+            }
+
+            Console.WriteLine("Repair Services");
+
+            foreach (var type in Enum.GetValues(typeof(RepairService)))
+            {
+                Console.WriteLine(type);
+            }
         }
     }
 }

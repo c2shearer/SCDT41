@@ -10,10 +10,12 @@ namespace Cleaning_Service
     {
         public char Gender { get; set; }
         public string? Email { get; set; }
-        public string? Telephone { get; set; }
+        public string Telephone { get; set; }
         public string? Address { get; set; }
         public string? City { get; set; }
         public string? County { get; set; }
+
+        private static List<Customer> Customers = new List<Customer>();
 
         public Customer(string FirstName, string LastName, char Gender, string Email, string Telephone, string Address, string City, string County)
         {
@@ -27,6 +29,14 @@ namespace Cleaning_Service
             this.Address = Address;
             this.City = City;
             this.County = County;
+        }
+
+        public static void CustomerList()
+        {
+            foreach (Customer customer in Customers)
+            {
+                customer.ToString();
+            }
         }
 
         public override string ToString()
