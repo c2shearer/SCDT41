@@ -23,7 +23,17 @@ namespace Cleaning_Service
             this.Description = Description;
             this.Price = Price;
             DatePurchase = DateTime.Now;
-            MaterialList.Add(this);
+        }
+
+        public static void AddMaterial()
+        {
+            Console.WriteLine("Material Name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Material Use: ");
+            string description = Console.ReadLine();
+            Console.WriteLine("Material Price: ");
+            decimal price = Convert.ToDecimal(Console.ReadLine());
+            MaterialList.Add(new Material(name, description, price));
         }
 
         public static void MaterialPurchased()

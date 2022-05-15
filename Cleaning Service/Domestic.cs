@@ -7,7 +7,7 @@ using static Cleaning_Service.EnumProperties;
 
 namespace Cleaning_Service
 {
-    public class Domestic
+    public class Domestic : IProperties
     {
         public Guid Id { get; set; }
         public string Address { get; set; }
