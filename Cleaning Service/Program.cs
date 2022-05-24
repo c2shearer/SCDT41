@@ -28,7 +28,7 @@ for (int i = 3; i != 0; i--)
         char subOption = '\0';
         do
         {
-            Console.WriteLine("Select an Option from the following\nA) Manage Customers\nB) Manage Bookings\nC) Purchase Materials\nD) Exit");
+            Console.WriteLine("Select an Option from the following\nA) Manage Customers\nB) Manage Staff\nC) Manage Bookings\nD) Purchase Materials\nE) Exit");
             option = Convert.ToChar(Console.ReadLine().ToLower());
             switch (option)
             {
@@ -53,29 +53,48 @@ for (int i = 3; i != 0; i--)
                     }
                     break;
                 case 'b':
-                    Console.WriteLine("Manage Bookings Options\nA) Add Booking\nB) Close Booking\nC) View Booking Details");
+                    Console.WriteLine("Manage Staff Options\nA) Add Staff \nB) Delete Staff\nC) View Staff");
                     subOption = Convert.ToChar(Console.ReadLine().ToLower());
                     if (subOption == 'a')
                     {
-
-                    } 
+                        Staff.AddStaff();
+                    }
                     else if (subOption == 'b')
                     {
-
+                        Staff.DeleteStaff();
                     }
                     else if (subOption == 'c')
                     {
-
+                        Staff.StaffList();
                     }
                     else
                     {
                         Console.WriteLine("Option not found");
                     }
-
+                    break;
+                case 'c':
+                    Console.WriteLine("Manage Bookings Options\nA) Add Booking\nB) Close Booking\nC) View Booking Details");
+                    subOption = Convert.ToChar(Console.ReadLine().ToLower());
+                    if (subOption == 'a')
+                    {
+                        Book.AddDomestic();
+                    } 
+                    else if (subOption == 'b')
+                    {
+                        Book.UpdateDomestic();
+                    }
+                    else if (subOption == 'c')
+                    {
+                        Book.ViewDomestic();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Option not found");
+                    }
                     break;
 
                 // Finished
-                case 'c':
+                case 'd':
                     Console.WriteLine("Manage Materials\nA) Log Material\nB) View Purchases\nC) Back");
                     subOption = Convert.ToChar(Console.ReadLine().ToLower());
                     if (subOption == 'a')
@@ -95,26 +114,34 @@ for (int i = 3; i != 0; i--)
                         Console.WriteLine("Option not found");
                     }
                     break;
-                case 'd':
+                case 'e':
+                    Console.WriteLine("Manage Issues\nA) Raise Issue\nB) View Issues\nC) Remove Issue");
+                    subOption = Convert.ToChar(Console.ReadLine().ToLower());
+                    if (subOption == 'a')
+                    {
+                        Issue.Raise();
+                    }
+                    else if (subOption == 'b')
+                    {
+                        Issue.IssueRaised();
+                    }
+                    else if (subOption == 'c')
+                    {
+                        Issue.Delete();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Option not found");
+                    }
+                    break;
+                case 'f':
                     Console.WriteLine("Exiting Application");
                     break;
                 default:
                     Console.WriteLine("Option not found");
                     break;
             }
-        } while (option != 'd');
+        } while (option != 'f');
         break;
     }
 }
-
-
-
-/*Customer Cameron = new("Cameron", "Shearer", 'M', "cam@btc.ac.uk", "07884942572", "123 Road", "Bridgwater", "Somerset");
-
-Material Mop = new("Mop", "Used for cleaning the floor", 9.99m);
-Material Bucket = new("Bucket", "Used for holding water", 4.99m);
-
-EnumProperties.Types();
-EnumServices.Types();*/
-
-

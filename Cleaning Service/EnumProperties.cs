@@ -29,7 +29,7 @@ namespace Cleaning_Service
             RETAIL
         }
 
-        public static void Types()
+        public static void DomesticTypes()
         {
             Console.WriteLine("Domestic Properties");
 
@@ -37,10 +37,13 @@ namespace Cleaning_Service
             {
                 Console.WriteLine(type);
             }
+        }
 
+        public static void CommericalTypes()
+        {
             Console.WriteLine("Commercial Properties");
 
-            foreach(var type in Enum.GetValues(typeof(CommercialType)))
+            foreach (var type in Enum.GetValues(typeof(CommercialType)))
             {
                 Console.WriteLine(type);
             }

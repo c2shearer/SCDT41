@@ -13,7 +13,6 @@ namespace Cleaning_Service
         public string? Description { get; set; }
         public decimal Price { get; set; }
         public DateTime DatePurchase { get; set; }
-        
         private static List<Material> MaterialList = new List<Material>();
 
         public Material(string Name, string Description, decimal Price)
@@ -27,11 +26,11 @@ namespace Cleaning_Service
 
         public static void AddMaterial()
         {
-            Console.WriteLine("Material Name: ");
+            Console.WriteLine("Material Name:");
             string name = Console.ReadLine();
-            Console.WriteLine("Material Use: ");
+            Console.WriteLine("Material Use:");
             string description = Console.ReadLine();
-            Console.WriteLine("Material Price: ");
+            Console.WriteLine("Material Price:");
             decimal price = Convert.ToDecimal(Console.ReadLine());
             MaterialList.Add(new Material(name, description, price));
         }

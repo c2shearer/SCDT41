@@ -16,6 +16,7 @@ namespace Cleaning_Service
             Id = Guid.NewGuid();
             this.FirstName = FirstName;
             this.LastName = LastName;
+            IsAdmin = true;
             this.Username = Username;
             this.Password = Password;
         }
