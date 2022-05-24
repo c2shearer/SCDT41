@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cleaning_Service
 {
-    internal class Issue
+    public class Issue
     {
         public Guid Id { get; set; }
         public string? Description { get; set; }
@@ -32,7 +32,7 @@ namespace Cleaning_Service
             int x = 0;
             foreach(Issue issue in IssueList)
             {
-                Console.WriteLine($"Issue {x} - {issue.Id}: {issue.Description}\nRaised on: ${issue.Date}");
+                Console.WriteLine(issue);
             }
         }
 
@@ -45,6 +45,11 @@ namespace Cleaning_Service
                 IssueList.Remove(toRemove);
             else
                 Console.WriteLine("Issue Not Found");
+        }
+
+        public override string ToString()
+        {
+            return $"Issue - {Id}: {Description}\nRaised on: {Date}";
         }
     }
 }

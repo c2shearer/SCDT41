@@ -39,8 +39,14 @@ namespace Cleaning_Service
         {
             foreach(Material material in MaterialList)
             {
-                Console.WriteLine($"{material.Name} purchased at {material.DatePurchase}\n£{material.Price} for {material.Description}");
+                Console.WriteLine(material);
             }
         }
+
+        public override string ToString()
+        {
+            return $"{Name} purchased at {DatePurchase}\n£{Price} for {Description}";
+        }
+
     }
 }
