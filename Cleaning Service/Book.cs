@@ -9,6 +9,8 @@ namespace Cleaning_Service
 {
     public class Book : IBooking
     {
+        // Implement from Interface
+        // Properties of Booking
         public Guid Id { get; set; }
         public string Address { get; set; }
         public string City { get; set; } 
@@ -23,8 +25,10 @@ namespace Cleaning_Service
         public string EmployeeId { get; set; }
         public string BusinessType { get; set; }
         public string BusinessName { get; set; }
+        // Create List of all Bookings
         private static List<Book> BookingList = new List<Book>();
 
+        // Constructor to initiate values of Booking
         public Book(string Address, string City, string County, 
             float SquareFootage, string Description, string OwnerId,
             string EmployeeId, string BusinessType, string BusinessName)
@@ -44,6 +48,7 @@ namespace Cleaning_Service
             this.BusinessName = BusinessName;
         }
 
+        // Get Booking inputs
         public static void AddDomestic()
         {
             Console.WriteLine("Building Address:");
@@ -62,19 +67,24 @@ namespace Cleaning_Service
             string staffId = Console.ReadLine();
             Console.WriteLine("Business Type:");
             EnumProperties.DomesticTypes();
+            EnumProperties.CommericalTypes();
             string buildingType = Console.ReadLine().ToUpper();
             Console.WriteLine("Business Name:");
             string businessName = Console.ReadLine();
+            // Add to Booking List
             BookingList.Add(new Book(address, city, county, squareFootage, description, customerId, staffId, buildingType, businessName));
         }
 
+        // Update Booking from GUID
         public static void UpdateDomestic()
         {
             Console.WriteLine("Enter Job GUID:");
             string domesticId = Console.ReadLine();
+            // Filter list to find ID of Booking
             var completeJob = BookingList.SingleOrDefault(r => Convert.ToString(r.Id) == domesticId);
             if (completeJob != null)
             {
+                // Update Information
                 Console.WriteLine("Enter Employee Hours on Record");
                 float employeeTime = float.Parse(Console.ReadLine());
                 completeJob.EmployeeTime = employeeTime;
@@ -86,6 +96,7 @@ namespace Cleaning_Service
             }
         }
 
+        // Loop through entire Booking List
         public static void ViewDomestic()
         {
             int x = 0;
@@ -95,9 +106,10 @@ namespace Cleaning_Service
             }
         }
 
+        // Custom Output
         public override string ToString()
         {
-            return $"Property: {BusinessName} {Address} {City} {County} : {Id}\nType: {BusinessType} {SquareFootage}\nDate Booked: {Date}\nComplete: {Complete} at {Updated}";
+            return $"Property: {BusinessName} {Address} {City} {County} : {Id}\nType: {BusinessType} {SquareFootage} - {Description}\nOwner {OwnerId}\nStaff: {EmployeeId}\nDate Booked: {Date}\nComplete: {Complete} at {Updated}";
         }
     }
 }

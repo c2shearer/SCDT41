@@ -8,9 +8,12 @@ namespace Cleaning_Service
 {
     internal class Admin : User
     { 
+        // Values Unique to Admin
         public string Username { get; set; }
         public string Password { get; set; }
 
+
+        // Constructor to initiate values of Admin
         public Admin(string FirstName, string LastName, string Username, string Password)
         {
             Id = Guid.NewGuid();

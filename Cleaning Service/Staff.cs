@@ -8,12 +8,15 @@ namespace Cleaning_Service
 {
     public class Staff : User
     {
+        // Values of Staff, inheriting from User
         public char Gender { get; set; }
         public string? Email { get; set; }
         public string? Telephone { get; set; }
         public string? Role { get; set; }
+        // List to hold all Staff
         private static List<Staff> StaffMembers = new List<Staff>();
 
+        // Constructor to initiate new Staff
         public Staff(string FirstName, string LastName, char Gender, string Email, string Telephone, string Role)
         {
             Id = Guid.NewGuid();
@@ -26,6 +29,8 @@ namespace Cleaning_Service
             this.Role = Role;
         }
 
+
+        // Get details of Staff to be documented
         public static void AddStaff()
         {
             Console.WriteLine("Staff First Name:");
@@ -40,13 +45,16 @@ namespace Cleaning_Service
             string telephone = Console.ReadLine();
             Console.WriteLine("Staff Role:");
             string role = Console.ReadLine();
+            // Add to List
             StaffMembers.Add(new Staff(firstName, lastName, gender, emailAddress, telephone, role));   
         }
 
+        // Remove Staff from List
         public static void DeleteStaff()
         {
             Console.WriteLine("Enter Staff GUID: ");
             string staffId = Console.ReadLine();
+            // Go through list and find ID of the Staff
             var toRemove = StaffMembers.SingleOrDefault(r => Convert.ToString(r.Id) == staffId);
             if (toRemove != null)
                 StaffMembers.Remove(toRemove);
@@ -54,6 +62,7 @@ namespace Cleaning_Service
                 Console.WriteLine("No Staff Member Found");
         }
 
+        // Loop through entire Staff List
         public static void StaffList()
         {
             int x = 0;
@@ -63,6 +72,7 @@ namespace Cleaning_Service
             }
         }
 
+        // Custom Output
         public override string ToString()
         {
             return $"{FirstName} {LastName} {Gender} : {Id} - {Role}\nContact: {Email} + {Telephone}";

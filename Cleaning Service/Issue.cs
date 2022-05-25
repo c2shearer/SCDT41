@@ -8,11 +8,14 @@ namespace Cleaning_Service
 {
     public class Issue
     {
+        // Properties of Issue
         public Guid Id { get; set; }
         public string? Description { get; set; }
         public DateTime Date { get; set; }
+        // List to hold all Issues
         public static List<Issue> IssueList = new List<Issue>();
 
+        // Constructor to initiate new Issue
         public Issue(string Description)
         {
             Id = Guid.NewGuid();
@@ -20,6 +23,7 @@ namespace Cleaning_Service
             Date = DateTime.Now;
         }
 
+        // Get details of Issue to be documented
         public static void Raise()
         {
             Console.WriteLine("Issue Description");
@@ -27,6 +31,7 @@ namespace Cleaning_Service
             IssueList.Add(new Issue(descripton));
         }
 
+        // Loop through entire Issue List
         public static void IssueRaised()
         {
             int x = 0;
@@ -36,10 +41,12 @@ namespace Cleaning_Service
             }
         }
 
+        // Remove Issue from List
         public static void Delete()
         {
             Console.WriteLine("Enter Issue GUID: ");
             string issueId = Console.ReadLine();
+            // Filter List to find ID of Issue
             var toRemove = IssueList.SingleOrDefault(r => Convert.ToString(r.Id) == issueId);
             if (toRemove != null)
                 IssueList.Remove(toRemove);
@@ -47,6 +54,7 @@ namespace Cleaning_Service
                 Console.WriteLine("Issue Not Found");
         }
 
+        // Custom Output
         public override string ToString()
         {
             return $"Issue - {Id}: {Description}\nRaised on: {Date}";

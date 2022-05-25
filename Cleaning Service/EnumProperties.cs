@@ -29,6 +29,7 @@ namespace Cleaning_Service
             RETAIL
         }
 
+        // Loop Through Types
         public static void DomesticTypes()
         {
             Console.WriteLine("Domestic Properties");
