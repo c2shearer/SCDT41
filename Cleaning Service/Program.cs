@@ -36,6 +36,7 @@ for (int i = 3; i != 0; i--)
             Console.WriteLine("Select an Option from the following\nA) Manage Customers\nB) Manage Staff\nC) Manage Bookings\nD) Purchase Materials\nE) Manage Issues\nF) Exit");
             option = Convert.ToChar(Console.ReadLine().ToLower());
             // Used to Navigate through the Menu
+            // Call static methods
             switch (option)
             {
                 case 'a':
