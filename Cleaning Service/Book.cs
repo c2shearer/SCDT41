@@ -109,7 +109,7 @@ namespace Cleaning_Service
         // Custom Output
         public override string ToString()
         {
-            return $"Property: {BusinessName} {Address} {City} {County} : {Id}\nType: {BusinessType} {SquareFootage} - {Description}\nOwner {OwnerId}\nStaff: {EmployeeId}\nDate Booked: {Date}\nComplete: {Complete} at {Updated}";
+            return $"Property: {BusinessName} {Address} {City} {County} : {Id}\nType: {BusinessType} {SquareFootage} - {Description}\nOwner: {OwnerId}\nStaff: {EmployeeId}\nDate Booked: {Date}\nComplete: {Complete} at {Updated}";
         }
     }
 }

@@ -42,7 +42,7 @@ namespace TestProject1
 
             // Assert
             Assert.IsType<Book>(book);
-            Assert.Equal(testBook, $"Property: ASDA 456 Road Bridgwater Somerset : {book.Id}\nType: FLAT 200\nDate Booked: {book.Date}\nComplete: {book.Complete} at {book.Updated}");
+            Assert.Equal(testBook, $"Property: ASDA 456 Road Bridgwater Somerset : {book.Id}\nType: FLAT 200 - {book.Description}\nOwner: {book.OwnerId}\nStaff: {book.EmployeeId}\nDate Booked: {book.Date}\nComplete: {book.Complete} at {book.Updated}");
         }
         [Fact]
         public void MaterialTest()
